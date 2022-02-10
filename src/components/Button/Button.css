@@ -4,6 +4,12 @@
     --dark-purple:#3a0667;
     --light-orange:#ffc12a;
     --dark-orange:#ff8304;
+    --dark-sky-blue:#239eca;
+    --light-sky-blue:#02edff;
+    --dark-green:#01ff67;
+    --light-green:#04ffd2;
+    --dark-red:#ff6a00;
+    --light-red:#ff0456;
   }
   
   .btn {
@@ -117,6 +123,7 @@
     background-color: white;
     border: 1px solid var(--dark-orange);
     transition: all 0.3s ease-out;
+    color: var(--dark-orange);
   }
   .purple {
     background:linear-gradient(var(--light-purple),var(--dark-purple));

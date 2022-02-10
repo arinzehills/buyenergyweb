@@ -72,8 +72,8 @@ function Footer() {
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
             <img
-                      src='images/logo_transparent.png'
-                      style={{height:60}}
+                      src='images/whitelogo.png'
+                      style={{maxHeight:'100px'}}
                       alt="" />
             </Link>
           </div>

@@ -10,7 +10,7 @@ const desc=['Buy energy gives you the freedom tobuy energy units'+
 'from the conformt of your home,Buy energy gives you the freedom tobuy energy units'+
 'in an easier,better, smarter and more secure way from'+
 'from the conformt of your home']
-function Uniqueness({}) {
+function Uniqueness() {
    
   return <>
             <div className="unique-container">                           
@@ -18,21 +18,21 @@ function Uniqueness({}) {
                 <h2 className='unique-header'>The Uniqueness of Buy Energy?</h2>  
                  <div className="unique-card-container">
                     <div className="unique-card">
-                    <img src={imgs[0]}className='img'/>
+                    <img src={imgs[0]}className='img' alt=''/>
                         <div className="card-info">
                         <h3 className='unique_heading2 '>{heading[0]}</h3>
                         <p>{desc[0]}</p>
                         </div>
                     </div>
                     <div className="unique-card">
-                    <img src={imgs[1]} className='img'/>
+                    <img src={imgs[1]} className='img' alt=''/>
                         <h3  className='unique_heading2 '>{heading[1]}</h3>
                         <div className="card-info">
                         <p>{desc[0]}</p>
                         </div>
                     </div> 
                     <div className="unique-card">
-                    <img src={imgs[2]}className='img'/>
+                    <img src={imgs[2]}className='img' alt=''/>
                         <div className="card-info">
                         <h3  className='unique_heading2 '>{heading[2]}</h3>
                         <p>{desc[0]}</p>

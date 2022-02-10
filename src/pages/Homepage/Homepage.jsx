@@ -4,7 +4,7 @@ import Uniqueness from '../../components/Uniqueness/Uniqueness';
 import { homeData,homeData2,homeData3 } from './Data';
 
 const Homepage = () => {
-
+            console.log(homeData)
             return <>
                     <Hero {...homeData}/>
                     <Uniqueness />

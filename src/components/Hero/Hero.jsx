@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import './Hero.css';
 function Hero({
@@ -39,13 +40,18 @@ function Hero({
                   </p>
                   {/* <Link to='/sign-up'> */}
                     {showButton ? 
-                    <Button  buttonColor='orange'>
+                    <Link to='/register'>
+                      <Button  buttonColor='orange'>
                       {buttonLabel[0]}
-                    </Button> :null}
+                      </Button> </Link>:null}
+                      
+                      
                     {showButton ? 
-                    <Button  buttonColor='purple'>
-                      {buttonLabel[1]}
-                    </Button> :null}
+                     <Link to='/buyunits'>
+                      <Button  buttonColor='purple'>
+                      {buttonLabel[0]}
+                      </Button> </Link>
+                      :null}
                   {/* </Link> */}
                 </div>
               </div>

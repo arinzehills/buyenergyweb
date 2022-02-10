@@ -1,6 +1,7 @@
 import React,{ useState,useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {FaBars,FaTimes} from 'react-icons/fa'
+import {useNavigate} from 'react-router-dom';
 import { Button } from '../Button/Button';
 // import {logo} from '../../../assets/logo_transparent.png
 import './Navbar.css';
@@ -14,7 +15,8 @@ const Navbar = () => {
     // const hoverEvent= () =>{
     //     onmouseenter{()=>setOnHover(!onHover)};
     // }
-
+    // const router=useNavigate()
+    //     router.
   const showButton = () => {
         if (window.innerWidth <= 960) {
         setButton(false);
@@ -31,7 +33,9 @@ const Navbar = () => {
         }
     }, []);
 
-
+      const pagesToHide = ["dashboard/buyairtime","dashboard","dashboard/buyenergy"]
+      const location=useLocation();
+      const showNavbar = pagesToHide.includes(location)
   return (
         <>
             <div className='navbar'>
@@ -47,23 +51,28 @@ const Navbar = () => {
              </div>
              <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                  <li className='nav-items'>
-                     <Link to="/" className='nav-links'>Home</Link>
+                     <Link to="/" className='nav-links' onClick={closeMobileMenu}>Home</Link>
                  </li>
                  <li className='nav-items'>
-                     <Link to="/about" className='nav-links'>About us</Link>
+                     <Link to="/about" className='nav-links' onClick={closeMobileMenu}>About us</Link>
                  </li>
                  <li className='nav-items'>
-                     <Link to="/contact" className='nav-links'>Contact us</Link>
+                     <Link to="/contact" className='nav-links' onClick={closeMobileMenu}>Contact us</Link>
                  </li>
                  <li className='nav-items'>
-                     <Link to="/faq" className='nav-links'>Home</Link>
+                     <Link to="/faq" className='nav-links' onClick={closeMobileMenu}>FAQ</Link>
                  </li>
-                 <li className='nav-btn'>
-                     {button ? <Button 
+                 <li className='nav-btn' onClick={closeMobileMenu}>
+                     {button ?
+                        <Link to="/login"><Button 
                                  buttonColor='orange' 
                                  >Login </Button>
+                        </Link> 
                                  :
-                                <Button buttonColor='purple'>Sign up</Button>}
+                                 <Link to="/login">
+                                     <Button buttonColor='purple'>Sign In</Button>
+                                </Link>
+                                     }
                   </li>
                  {/* <li className="nav-btn">
                      {button ? (    

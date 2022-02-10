@@ -7,6 +7,7 @@ export const homeData={
     buttonLabel:['Sign up','Buy units'],
     img:'images/buyenergyslant.png',
     imgStart:'start',
+    smallImage: 'images/twocircle.png',
     alt1:'da',
     alt2:'da',
 }

@@ -74,7 +74,6 @@
   .menu-icon {
     display: none;
   }
-   /* smaller screens starts here */
   @media screen and (max-width: 960px) {
     .NavbarItems {
       position: relative;
@@ -155,4 +154,3 @@
       height: 120px;
     }
   }
-  /* smaller screens ends here */

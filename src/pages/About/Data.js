@@ -8,6 +8,6 @@ export const homeData={
     img:'images/buyenergyslant.png',
     imgStart:'start',
     smallImage: 'images/twocircle.png',
-    alt1:'da',
-    alt2:'da',
+    alt1:'',
+    alt2:'',
 }

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 // import styled from "styled-components";
 import { MdSpaceDashboard } from "react-icons/md";
-import { FaMobile, FaUser,FaAlignRight,FaTimes } from "react-icons/fa";
+import { FaMobile, FaUser,FaAlignRight,FaTimes   } from "react-icons/fa";
 import { GiWaterDrop } from "react-icons/gi";
 import { ImPower } from "react-icons/im";
 import { IoSettings} from "react-icons/io5";
@@ -63,10 +63,10 @@ export default function Sidebar() {
                            
                            <Link to='/dashboard'>
 
-                           <a href="#">
+                          
                             <MdSpaceDashboard />
                             <span> Dashboard</span>   
-                          </a> 
+                          
                            </Link>
                           
                         </li>

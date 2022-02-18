@@ -109,7 +109,7 @@ function Formhero({
                                     onClick={()=>history('/dashboard')}
                                     buttonSize='btn--mobile'
                                     style={{width:'100%'}}>
-                                    {buttonLabel[0]}  
+                                    Login  
                             </Button >                            
                             {/* </Link> */}
                             <div className="hr-wrapper">

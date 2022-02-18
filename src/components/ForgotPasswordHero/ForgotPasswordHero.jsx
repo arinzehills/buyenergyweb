@@ -2,9 +2,9 @@ import React from 'react';
 import { Button } from '../Button/Button';
 import InputField from '../Inputfield/InputField';
 import {FaTwitter,FaWhatsapp,FaFacebook} from 'react-icons/fa';
-import './Formhero.css'
+import './ForgotPasswordHero.css'
 import { Link, useNavigate } from 'react-router-dom';
-function Formhero({
+function ForgotPasswordHero({
     headline,
     showButton,
     onClick,
@@ -70,43 +70,12 @@ function Formhero({
                                     /></div>
                                 }
                             </div>  
-                            {/* {buttonLabel.map((label,color)=>
-                            <div style={{marginTop:'30px'}}>
-                            <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                {label}
-                            </Button >
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                            </div>)} */}
-                            {/* this is for contact */}
-                            {formType=='contact'?
-                            <div style={{marginTop:'10px'}}>
-                            <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                Send message
-                            </Button >
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                             <div className="hr-icons">
-
-                                   <FaFacebook className='icons'/>
-                                   <FaWhatsapp className='icons'/>
-                                   <FaTwitter className='icons'/>
-                             </div>
-                            </div> : //for register and sign up
+                     
+                             {/* //for register and sign up */}
                              <div style={{marginTop:'10px'}}>
                             {/* <Link to={'/'+ buttonLabel[0]} > */}
                              <Button  buttonColor='orange' 
-                                    onClick={()=>history('/dashboard')}
+                                    onClick={()=>history('/resetPassword')}
                                     buttonSize='btn--mobile'
                                     style={{width:'100%'}}>
                                     {buttonLabel[0]}  
@@ -117,19 +86,12 @@ function Formhero({
                                     <p className='hr-p '>OR</p>
                                     <hr className='hr'></hr>
                              </div>
-                            <Link to={'/'+buttonLabel[1]} >
-                             <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                    {buttonLabel[1]}  
-                            </Button >                            
-                            </Link>
                             <div className="forgot-password-link">
-                                <Link to="/forgotPassword"
-                                className='forgot-password-link'
-                                >Forgot Your Password</Link>
+                                <Link to="/login"
+                                    
+                                >LOGIN</Link>
                             </div>
-                            </div> }
+                            </div> 
 
                             </div>
                          </div>
@@ -140,4 +102,4 @@ function Formhero({
          </>;
 }
 
-export default Formhero;
+export default ForgotPasswordHero;

@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css'
 import {  Routes as Switch, Route,useLocation } from "react-router-dom";
-import Navbar from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage/Homepage';
-import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import Contactus from './pages/Contact/Contactus';
 import FAQ from './pages/FAQ/FAQ';
@@ -18,6 +16,8 @@ import Settings from './pages/Dashboard/Settings/Settings';
 import Buyenergy from './pages/Dashboard/Buyenergy/Buyenergy';
 import Profile from './pages/Dashboard/Profile/Profile';
 import HomepageWrapper from './pages/HomepageWrapper/HomepageWrapper';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import ResetPassword from './components/ResetPassword/ResetPassword';
 const App = () => {
 
     // const pagesToHide = ["login","dashboard","register"]
@@ -34,9 +34,10 @@ const App = () => {
                     <Route path='/contact' exact element={<Contactus/>}/>
                     <Route path='/faq'  exact element={<FAQ />}/>
                     <Route path='/login'  exact element={<Login />}/>
+                    <Route path='/forgotPassword'  exact element={<ForgotPassword />}/>
+                    <Route path='/resetPassword'  exact element={<ResetPassword />}/>
                     <Route path='/register'  exact element={<Register />}/>
-                </Route>
-              
+                </Route>              
                 <Route path='/dashboard'  element={<Dashboard />}>
                     <Route path='buyenergy'   element={<Buyenergy />}/> 
                     <Route path='buyairtime'   element={<Buyairtime />}/> 

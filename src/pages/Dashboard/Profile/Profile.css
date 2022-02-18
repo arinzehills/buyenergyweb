@@ -1,0 +1,57 @@
+.buy-airtime-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-p{
+   margin-left: -23em;
+   padding-top: 1rem;
+}
+.buy-airtime-form{
+    justify-content: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-row{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width:500px ;
+    display: flex;
+    flex-direction: row;
+}
+.form-column{
+    display: flex;
+    flex-direction: column;
+}
+.form-column h3{
+    margin-left: 10px;
+}
+.user-circle{
+    color: var(--light-orange);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 960px) {
+    .buy-airtime-section{
+        margin-top: 2rem;
+    }
+    .buy-airtime-form{
+       justify-content: center;
+       align-items: center;
+       align-content: center;
+       margin-left: 5rem;
+       display: flex;
+    }
+    .profile-p{
+        margin-left: -15rem;
+     }
+    .form-row{
+      flex-direction: column;
+    }
+  }

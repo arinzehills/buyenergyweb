@@ -1,0 +1,20 @@
+.buy-airtime-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.buy-airtime-form{
+    justify-content: center;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form-row{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width:500px ;
+    display: flex;
+    flex-direction: row;
+}

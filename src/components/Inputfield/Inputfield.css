@@ -4,8 +4,20 @@
     border: none;
     border-radius: 50px;
     padding-left: 30px;
+    margin-top: 1rem;
 }
-
+.ipn--small{
+    width: 15rem;
+}
+.ipn--medium{
+    width: 19rem;
+}
+.ipn--large{
+    width: 25rem;
+}
+.ipn--wide{
+    width: 30rem;
+}
 .input-primary{
     border: 1px solid white;
 }

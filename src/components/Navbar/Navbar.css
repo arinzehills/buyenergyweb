@@ -1,10 +1,21 @@
 :root {
   --primary: #fff;
+  --grey: #f3f3f3;
   --light-purple:#6500ff;
   --dark-purple:#3a0667;
+  --dark-purple2:#5509ff;
+  --light-purple2:#8205ffa9;
   --light-orange:#ffc12a;
   --dark-orange:#ff8304;
-  --grey: #f3f3f3;
+  --dark-sky-blue:#239eca;
+  --light-sky-blue:#02edff;
+  --dark-green:#00ED98;
+  --light-green:#04ffea;
+  --dark-red:#ff6a00;
+  --light-red:#ff0456;
+  --light-blue:#0706ff;
+  --dark-blue:#02b5ff;
+
 }
 .navbar {
     background: #ffffff;

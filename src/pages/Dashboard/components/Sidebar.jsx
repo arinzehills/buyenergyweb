@@ -12,6 +12,7 @@ import { Button } from '../../../components/Button/Button';
 import scrollreveal from "scrollreveal";
 import './Sidebar.css'
 import { Link, useNavigate } from "react-router-dom";
+import ResponsiveSidebar from "./ResponsiveSidebar";
 export default function Sidebar() {
     const [currentLink, setCurrentLink] = useState(1);
     const [navbarState, setNavbarState] = useState(false);
@@ -19,6 +20,7 @@ export default function Sidebar() {
     html.addEventListener("click", () => setNavbarState(false));
     const [click,setClick]=useState(false);
     const handleClick=()=>setClick(!click);
+    const closeMobileMenu = () => setClick(!click);
 
     useEffect(()=>{
       const sr=scrollreveal({
@@ -38,18 +40,28 @@ export default function Sidebar() {
           .logout
       `,{
         opacity:0,
-        interval:300,
+        interval:100,
       })
     });
     const history=useNavigate()
     return (
         <>
         {/* <Section> */}
-        <div className="toggle" onClick={handleClick}>
-                 {click ? < FaTimes /> : <FaAlignRight /> }             
-          </div>
-        <div className={click ? 'left-section show' : 'left-section'}>
-       
+        <div className="toggle-nav">
+          <Link to='/' className='sidebard-logo'>
+                      <img
+                        src='images/logo_transparent.png'
+                        style={{height:40}}
+                        alt="" />
+          </Link>
+          <div className="toggle" onClick={handleClick}>
+                  {click ? < FaTimes /> : <FaAlignRight /> }             
+            </div>
+
+        </div>
+        <ResponsiveSidebar className={click ? 'show ': 'show hide'} onClick={closeMobileMenu}/>
+        <div className= 'left-section'>
+        
             <div className="top">
                 <div className="brand">
                 <Link to='/'>
@@ -59,11 +71,8 @@ export default function Sidebar() {
                 
                 <div className="links">
                     <ul >
-                        <li onClick={()=>setCurrentLink(1)} className={currentLink===1 ? 'active-nav': ''}>
-                           
-                           <Link to='/dashboard'>
-
-                          
+                        <li onClick={()=>setCurrentLink(1)} className={currentLink===1 ? 'active-nav': ''}>                      
+                           <Link to='/dashboard' >
                             <MdSpaceDashboard />
                             <span> Dashboard</span>   
                           
@@ -83,7 +92,7 @@ export default function Sidebar() {
                           </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(4)} className={currentLink===4 ? 'active-nav': ''}>
-                        <Link to="/buyairtime">
+                        <Link to="/dashboard/buyairtime">
                             <HiViewGridAdd />
                             <span> More</span>   
                             </Link> 

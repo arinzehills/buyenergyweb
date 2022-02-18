@@ -14,11 +14,11 @@
 .card p{
     font-size: 40px;
     display: flex;
-    max-width: 30px;
+    max-width: 100%;
     /* pa */
 }
 .orange{
-    background:radial-gradient(var(--light-orange),var(--dark-orange));
+    background:linear-gradient(var(--light-orange),var(--dark-orange));
    
 }
 .red{
@@ -26,11 +26,18 @@
 }
 .blue{
 
-    background:radial-gradient(var(--dark-sky-blue),var(--light-sky-blue)); 
+    background:linear-gradient(to left top,var(--dark-sky-blue),var(--light-sky-blue)); 
 }
 .green{
 
-    background:radial-gradient(var(--light-green),var(--dark-green)); 
+    background:linear-gradient(to left top, var(--light-green),var(--dark-green)); 
+}
+.purple2{
+    background:linear-gradient(to left top, var(--light-purple2),var(--dark-purple2)); 
+}
+.blue2{
+
+    background:linear-gradient(to left top, var(--light-blue),var(--dark-blue)); 
 }
 @media screen and (max-width: 960px) {
     .btn{
@@ -38,5 +45,11 @@
       margin-bottom: 35px;
       height: 60px;
       /* max-width: 20px; */
+    }
+    .card p{
+        font-size: 35px;
+        display: flex;
+        max-width: 100%;
+        /* pa */
     }
   }

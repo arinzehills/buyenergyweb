@@ -56,14 +56,14 @@ function Formhero({
                                 flexDirection:'column'}}>
                             
                                 {inputLabels.slice(0,2).map((label)=>//pick the first 3elements
-                                  <div style={{marginTop:'30px'}}>
+                                  <div style={{marginTop:'10px'}}>
                                     <InputField label={label}
                                     inputStyle='input--shadow-purple' 
                                     inputColor='purple-input'
                                     /></div>
                                 )}
                                 {(formType=='contact'  || formType=='register')  && 
-                                    <div style={{marginTop:'30px'}}>
+                                    <div style={{marginTop:'10px'}}>
                                     <InputField label={inputLabels[2]}
                                     inputStyle='input--shadow-purple' 
                                     inputColor='purple-input'
@@ -85,7 +85,7 @@ function Formhero({
                             </div>)} */}
                             {/* this is for contact */}
                             {formType=='contact'?
-                            <div style={{marginTop:'30px'}}>
+                            <div style={{marginTop:'10px'}}>
                             <Button  buttonColor='purple' 
                                     buttonSize='btn--mobile'
                                     style={{width:'100%'}}>
@@ -103,7 +103,7 @@ function Formhero({
                                    <FaTwitter className='icons'/>
                              </div>
                             </div> : //for register and sign up
-                             <div style={{marginTop:'30px'}}>
+                             <div style={{marginTop:'10px'}}>
                             {/* <Link to={'/'+ buttonLabel[0]} > */}
                              <Button  buttonColor='orange' 
                                     onClick={()=>history('/dashboard')}

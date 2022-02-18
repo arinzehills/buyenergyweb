@@ -45,13 +45,7 @@
     color: #3b0746;
   }
   
-  .dark {
-    color: #1c2237;
-  }
-  
-  .darkBg {
-    background-color: #1c2237;
-  }
+
   
   .home__hero-subtitle {
     max-width: 440px;
@@ -79,7 +73,7 @@
     border: 0;
     max-width: 100%;
     vertical-align: middle;
-    display: inline-block;
+    display: flex;
   }
   
   @media screen and (max-width: 991px) {

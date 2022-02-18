@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import { BrowserRouter as Router, Routes as Switch, Route,useLocation } from "react-router-dom";
+import {  Routes as Switch, Route,useLocation } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
@@ -16,8 +16,8 @@ import Buywater from './pages/Dashboard/Buywater/Buywater';
 import Buyairtime from './pages/Dashboard/Buyairtime/Buyairtime';
 import Settings from './pages/Dashboard/Settings/Settings';
 import Buyenergy from './pages/Dashboard/Buyenergy/Buyenergy';
-import Sidebar from './pages/Dashboard/components/Sidebar';
 import Profile from './pages/Dashboard/Profile/Profile';
+import HomepageWrapper from './pages/HomepageWrapper/HomepageWrapper';
 const App = () => {
 
     // const pagesToHide = ["login","dashboard","register"]
@@ -26,26 +26,29 @@ const App = () => {
   return (
             <div>
             
-            {location.pathname!='/dashboard'   && <Navbar /> }                          
+            {/* {location.pathname!='/dashboard'   && <Navbar /> }                           */}
             <Switch>
-                <Route path='/' exact element={<Homepage/>}/>
-                <Route path='/about' exact element={<About/>}/>
-                <Route path='/contact' exact element={<Contactus/>}/>
-                <Route path='/faq'  exact element={<FAQ />}/>
-                <Route path='/login'  exact element={<Login />}/>
-                <Route path='/register'  exact element={<Register />}/>
-                <Route path='/dashboard' >
-                    <Route path='/dashboard/buyenergy'   element={<Buyenergy />}/> 
-                    <Route path='/dashboard/buyairtime'  exact element={<Buyairtime />}/> 
-                    <Route path='/dashboard/buywater'  exact element={<Buywater />}/> 
-                    <Route path='/dashboard/settings'  exact element={<Settings />}/>                     
-                    <Route path='/dashboard/profile'  exact element={<Profile />}/>                     
-                    <Route index element={<Dashboard />} />  
+                <Route path='/' exact element={<HomepageWrapper/>}>
+                    <Route  index element={<Homepage/>}/>
+                    <Route path='/about' exact element={<About/>}/>
+                    <Route path='/contact' exact element={<Contactus/>}/>
+                    <Route path='/faq'  exact element={<FAQ />}/>
+                    <Route path='/login'  exact element={<Login />}/>
+                    <Route path='/register'  exact element={<Register />}/>
                 </Route>
-                {/* <Redirect  />. */}
+              
+                <Route path='/dashboard'  element={<Dashboard />}>
+                    <Route path='buyenergy'   element={<Buyenergy />}/> 
+                    <Route path='buyairtime'   element={<Buyairtime />}/> 
+                    <Route path='buywater'   element={<Buywater />}/> 
+                    <Route path='settings'   element={<Settings />}/>                     
+                    <Route path='profile'   element={<Profile />}/>                     
+                    <Route index element={<Home />} />  
+                </Route>
+                {/* <Redirect to='/dashboard' /> */}
                 <Route path='*'  exact element={<Notfound />}/>
             </Switch>
-               {location.pathname!='/dashboard' && location.pathname!='/dashbaord/*' &&  <Footer /> }
+               {/* {location.pathname!='/dashboard' && location.pathname!='/dashbaord/*' &&  <Footer /> } */}
             </div>  
            
          );

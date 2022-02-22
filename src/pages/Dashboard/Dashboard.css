@@ -1,4 +1,4 @@
-.section{
+/* .section{
     margin-left: 18vw;
     max-width: 70%;
     padding: 3vw;
@@ -15,8 +15,8 @@
     align-items:center;
     display: flex;
     
-}
-@media screen and (max-width: 960px) {
+} */
+/* @media screen and (max-width: 960px) {
     .row-one{
         display: flex;
         flex-direction: column;
@@ -25,4 +25,4 @@
     .section{
         margin-left: 0;
     }
-  }
+  } */

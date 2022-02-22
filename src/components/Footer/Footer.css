@@ -149,10 +149,12 @@
     }
   
     .footer-input {
-      width: 100%;
+      width: 60%;
     }
   
-  
+    .footer-link-items{
+      margin: 0;
+    }
     .footer-link-wrapper {
       flex-direction: column;
     }

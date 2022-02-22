@@ -16,7 +16,7 @@ function Hero({
     return (
       <>
         <div className='home__hero-section'>
-          <div className='container'>
+          <div className='hero-container'>
             <div
               className='row home__hero-row'
               style={{
@@ -49,7 +49,7 @@ function Hero({
                     {showButton ? 
                      <Link to='/buyunits'>
                       <Button  buttonColor='purple'>
-                      {buttonLabel[0]}
+                      {buttonLabel[1]}
                       </Button> </Link>
                       :null}
                   {/* </Link> */}

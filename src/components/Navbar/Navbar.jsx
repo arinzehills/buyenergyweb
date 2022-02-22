@@ -70,7 +70,9 @@ const Navbar = () => {
                         </Link> 
                                  :
                                  <Link to="/login">
-                                     <Button buttonColor='purple'>Sign In</Button>
+                                     <Button buttonColor='purple'
+                                        buttonSize='btn--wide'
+                                     >Sign In</Button>
                                 </Link>
                                      }
                   </li>

@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Button } from '../../../components/Button/Button'
 import InputField from '../../../components/Inputfield/InputField'
 import {FaUserCircle} from 'react-icons/fa'
+import useUser from '../../../useUser'
 
 function Settings() {
-  // const data=['Name','Email','Phone'];
-
+  // const data=['Name','Email','Phone'];      
+    const [loading,setLoading]=useState(false)
+    const {user, setUser} = useUser();
   return (
     <>
      <div className="buy-airtime-section">
@@ -13,29 +15,31 @@ function Settings() {
          <h1 className='airtime-header' >Settings</h1>
          <div className="buy-airtime-form">            
           <h3 className="profile-p">Name</h3>
-         <InputField inputColor='purple-input' label='name'
+          <InputField inputColor='purple-input' label={user['name']  ?? 'name'}
          inputSize={window.innerWidth < 960 ? 'ipn--medium' : 'ipn--wide' }
-         readonly={true}
+         
         />
           <h3 className="profile-p">Email</h3>
-        <InputField inputColor='purple-input' label='email'
+        <InputField inputColor='purple-input' label={user['email']  ?? 'email'}
          inputSize={window.innerWidth < 960 ? 'ipn--medium' : 'ipn--wide' }
-         readonly={true}
+         
         />
           <h3 className="profile-p">Phone</h3>
-        <InputField inputColor='purple-input' label='phone'
+        <InputField inputColor='purple-input' label={user['phone']  ??'no phone no added'}
          inputSize={window.innerWidth < 960 ? 'ipn--medium' : 'ipn--wide' }
-         readonly={true}
+        
         />
         
             <div className="form-row">
               <div className="form-column">
                 <h3 className="">Address</h3>
-                <InputField inputColor='purple-input' label='Address'  readonly={true}/>
+                <InputField inputColor='purple-input' 
+                label={user['address']  ??'No address added'}                 
+               />
               </div>
               <div className="form-column">
                   <h3 className="">Password</h3>
-                <InputField inputColor='purple-input' label='Address'  readonly={true}/>
+                <InputField inputColor='purple-input' label={user['passsword']  ??'********'}  readonly={true}/>
               </div>
             </div>
            <Button   buttonColor='purple'  >

@@ -123,12 +123,14 @@
     .nav-links:hover {
       color: #ffffff;
       transform: scale(1.2);
-      transition: all 0.3s ease;
+      /* transition: all 0.3s ease; */
     }
   
     .nav-item:hover {
+      /* transition: none; */
       border: none;
     }
+    
   
     .nav-item {
       width: 100%;

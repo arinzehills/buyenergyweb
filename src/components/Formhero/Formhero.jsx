@@ -8,25 +8,34 @@ function Formhero({
     headline,
     showButton,
     onClick,
+    message,
+    responseError,
     imageRight,
     imageleft,
     formType, 
     buttonLabel,
     inputLabels,
+    inputValues,
+    inputNames,
+    handleChange,
+    onSubmit,
+    formErrors,
     alt1,
     alt2,
   }) {
 
-    const images=['']
-    const history=useNavigate()
-    function handleSubmit(e) {
-        e.preventDefault();
 
-        history('/dashboard');
-    }
+    // console.log(inputLabels.map((label)=>label.id))
+    // const handleChange1=(e)=>{
+    //     // const {name,value}=e.target;
+    //     // setFormValues({...formValues,[name]:value})
+    //     console.log(e.target)
+    // };
+    // console.log(inputNames[0]);
   return <>
             <div className="form-hero-section">
-                <div className="container">
+                <div className="form-hero-container">
+                    
                 <div
                     className='row form-hero-row'
                     style={{
@@ -38,101 +47,128 @@ function Formhero({
                     <img src={imageleft} alt={alt2} className='right__hero-img' />
                     </div>
                    <div className="form__hero-text-wrapper">
-                           
-                    <div className="form-col">
-                            <div className="form-col">
-                            <div className='left__hero-img-wrapper'>
-                                    <img src={imageRight} alt={alt1} className='left__hero-img' />
+                  
+                       {/* <pre>{JSON.stringify(inputValues,undefined,2)}</pre> */}
+                     <form onSubmit={onSubmit} >
+                        <div className="form-col">
+                         {/* {message===null ? null : <div className='success-message'>{message}</div>} */}
+                                <div className="form-col">
+                                <div className='left__hero-img-wrapper'>
+                                        <img src={imageRight} alt={alt1} className='left__hero-img' />
+                                    </div>
+                                    
+                                    <h1 className='headline' >
+                                        {headline}
+                                    </h1>
                                 </div>
+                            <div className="form-col btn-wrapper">
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap:'wrap',
+                                    flexDirection:'column'}}>
                                 
-                        <h1 className='headline' >
-                            {headline}
-                        </h1>
-                            </div>
-                        <div className="form-col btn-wrapper">
-                            <div style={{
-                                display: 'flex',
-                                flexWrap:'wrap',
-                                flexDirection:'column'}}>
-                            
-                                {inputLabels.slice(0,2).map((label)=>//pick the first 3elements
-                                  <div style={{marginTop:'10px'}}>
-                                    <InputField label={label}
-                                    inputStyle='input--shadow-purple' 
-                                    inputColor='purple-input'
-                                    /></div>
-                                )}
-                                {(formType=='contact'  || formType=='register')  && 
-                                    <div style={{marginTop:'10px'}}>
-                                    <InputField label={inputLabels[2]}
-                                    inputStyle='input--shadow-purple' 
-                                    inputColor='purple-input'
-                                    /></div>
-                                }
-                            </div>  
-                            {/* {buttonLabel.map((label,color)=>
-                            <div style={{marginTop:'30px'}}>
-                            <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                {label}
-                            </Button >
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                            </div>)} */}
-                            {/* this is for contact */}
-                            {formType=='contact'?
-                            <div style={{marginTop:'10px'}}>
-                            <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                Send message
-                            </Button >
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                             <div className="hr-icons">
+                                    {/* {inputLabels.slice(0,2).map((label)=>//pick the first 3elements */}
+                                    
+                                        
+                                        <InputField label={inputLabels[0]}
+                                        value={inputValues[0]}
+                                        name={inputNames[0]}
+                                        inputStyle='input--shadow-purple' 
+                                        inputColor='purple-input'
+                                        onHandleChange={handleChange}
+                                        />
+                                        <p className='errors'>{formErrors[0]}</p>
+                                        <InputField label={inputLabels[1]}
+                                        value={inputValues[1]}
+                                        name={inputNames[1]}
+                                        inputStyle='input--shadow-purple' 
+                                        inputColor='purple-input'
+                                        onHandleChange={handleChange}
+                                        />
+                                        <p className='errors'>{formErrors[1]}</p>
+                                    
+                                    {/* )} */}
+                                    {(formType=='contact'  || formType=='register')  && 
+                                        <div style={{marginTop:'10px'}}>
+                                        <InputField label={inputLabels[2]}
+                                        inputStyle='input--shadow-purple' 
+                                        inputColor='purple-input'
+                                        name={inputNames[2]}
+                                        value={inputValues[2]}
+                                        onHandleChange={handleChange}
 
-                                   <FaFacebook className='icons'/>
-                                   <FaWhatsapp className='icons'/>
-                                   <FaTwitter className='icons'/>
-                             </div>
-                            </div> : //for register and sign up
-                             <div style={{marginTop:'10px'}}>
-                            {/* <Link to={'/'+ buttonLabel[0]} > */}
-                             <Button  buttonColor='orange' 
-                                    onClick={()=>history('/dashboard')}
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                    Login  
-                            </Button >                            
-                            {/* </Link> */}
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                            <Link to={'/'+buttonLabel[1]} >
-                             <Button  buttonColor='purple' 
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                    {buttonLabel[1]}  
-                            </Button >                            
-                            </Link>
-                            <div className="forgot-password-link">
-                                <Link to="/forgotPassword"
-                                className='forgot-password-link'
-                                >Forgot Your Password</Link>
-                            </div>
-                            </div> }
+                                        />
+                                        <p className='errors'>{formErrors[2]}</p>                                        
+                                        </div>
+                                        
+                                    }
+                                </div>  
+                                {/* {buttonLabel.map((label,color)=>
+                                <div style={{marginTop:'30px'}}>
+                                <Button  buttonColor='purple' 
+                                        buttonSize='btn--mobile'
+                                        style={{width:'100%'}}>
+                                    {label}
+                                </Button >
+                                <div className="hr-wrapper">
+                                        <hr className='hr'></hr>
+                                        <p className='hr-p '>OR</p>
+                                        <hr className='hr'></hr>
+                                </div>
+                                </div>)} */}
+                                {/* this is for contact */}
+                                <p className='errors'>{responseError ?? ''}</p>
+                                {formType=='contact'?
+                                <div style={{marginTop:'10px'}}>
+                                <Button  buttonColor='purple' 
+                                        buttonSize='btn--mobile'
+                                        style={{width:'100%'}}>
+                                    Send message
+                                </Button >
+                                <div className="hr-wrapper">
+                                        <hr className='hr'></hr>
+                                        <p className='hr-p '>OR</p>
+                                        <hr className='hr'></hr>
+                                </div>
+                                <div className="hr-icons">
 
+                                    <FaFacebook className='icons'/>
+                                    <FaWhatsapp className='icons'/>
+                                    <FaTwitter className='icons'/>
+                                </div>
+                                </div> : //for register and sign up
+                                <div style={{marginTop:'10px'}}>
+                                {/* <Link to={'/'+ buttonLabel[0]} > */}
+                                <Button  buttonColor='orange' 
+                                        // onClick={()=>history('/dashboard')}
+                                        buttonSize='btn--mobile'
+                                        style={{width:'100%'}}>
+                                      { buttonLabel[0]}
+                                </Button >                            
+                                {/* </Link> */}
+                                <div className="hr-wrapper">
+                                        <hr className='hr'></hr>
+                                        <p className='hr-p '>OR</p>
+                                        <hr className='hr'></hr>
+                                </div>
+                                <Link to={'/'+buttonLabel[1]} >
+                                <Button  buttonColor='purple' 
+                                        buttonSize='btn--mobile'
+                                        style={{width:'100%'}}>
+                                        {buttonLabel[1]}  
+                                </Button >                            
+                                </Link>
+                                <div className="forgot-password-link">
+                                    <Link to="/forgotPassword"
+                                    className='forgot-password-link'
+                                    >Forgot Your Password</Link>
+                                </div>
+                                </div> }
+
+                                </div>
                             </div>
-                         </div>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    </form>      
                         </div>
                     </div>
                 </div>

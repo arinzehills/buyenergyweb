@@ -22,7 +22,7 @@ function Home() {
 const data2={
     heading:'On Electricity',
     Color:'green',
-    description:'NGN 392323'
+    description:`NGN ${transactions['on_electricity']}` ?? 'NGN 0'
 }
 const data3={
     heading:'On Water',

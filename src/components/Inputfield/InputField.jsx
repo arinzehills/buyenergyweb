@@ -4,7 +4,7 @@ import './Inputfield.css'
 
 function InputField({
     label,inputStyle,inputColor,inputSize,style,readonly,
-    value,onHandleChange,name
+    value,onHandleChange,name,onClick
     }) {
        
     const STYLES=['input--primary', 'input--shadow-purple','input--shadow-orange']
@@ -34,6 +34,7 @@ function InputField({
             readOnly={readonly}
             value={value}
             onChange={onHandleChange}
+            onClick={onClick}
           />
          </>;
         //  document.getElementsByTagName(input)[0]

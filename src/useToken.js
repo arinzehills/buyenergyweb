@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react/cjs/react.production.min';
 
 export default function useToken() {
   const getToken = () => {
@@ -26,6 +27,9 @@ export default function useToken() {
     localStorage.setItem('user', JSON.stringify(user));
     setUser(user.user);
   };
+  // useEffect(()=>{
+  //   saveToken()
+  // },[token])
   return {
     setToken: saveToken,
     // setUser: saveUser,

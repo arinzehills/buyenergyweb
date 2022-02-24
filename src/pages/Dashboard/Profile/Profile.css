@@ -50,6 +50,11 @@
     }
     .profile-p{
         margin-left: -15rem;
+        /* color: black; */
+
+     }
+     form h3{
+         color: black;
      }
     .form-row{
       flex-direction: column;

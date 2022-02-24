@@ -147,6 +147,12 @@
       height: 60px;
      
     }
+    .btn--large{
+      width: 500px;
+    }
+    .airtime-header{
+      padding-top: 1em;
+    }
   }
   
   
@@ -154,5 +160,8 @@
     .btn {  
     width: 210px;
     height: 70px;
+  }
+  .btn--large{
+    width: 500px;
   }
   }

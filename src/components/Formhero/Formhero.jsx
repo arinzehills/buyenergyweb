@@ -24,7 +24,7 @@ function Formhero({
     alt2,
   }) {
 
-
+    const history=useNavigate()
     // console.log(inputLabels.map((label)=>label.id))
     // const handleChange1=(e)=>{
     //     // const {name,value}=e.target;
@@ -140,7 +140,7 @@ function Formhero({
                                 <div style={{marginTop:'10px'}}>
                                 {/* <Link to={'/'+ buttonLabel[0]} > */}
                                 <Button  buttonColor='orange' 
-                                        // onClick={()=>history('/dashboard')}
+                                         
                                         buttonSize='btn--mobile'
                                         style={{width:'100%'}}>
                                       { buttonLabel[0]}

@@ -2,6 +2,7 @@ import React, {useState,useEffect}from 'react';
 import { useNavigate } from 'react-router-dom';
 import Formhero from '../../components/Formhero/Formhero';
 import Loader from '../../components/Loader/Loader';
+import Modal from '../../components/Modal/Modal';
 
 
 const Register = ({setSuccessMessage}) => {
@@ -11,6 +12,7 @@ const Register = ({setSuccessMessage}) => {
   const [responseError,setResponseError]=useState('');
   const [isSubmit,setIsSubmit]=useState(false);
   const [loading,setLoading]=useState(false);
+  const [showModal,setShowModal]=useState(false);
   const history=useNavigate()
   const errors={}
   const inputValues=[
@@ -68,14 +70,14 @@ const inputErrors=[
       }
   },[formErrors])
   const register=async ()=>{
-    setLoading(false)
+    setLoading(true)
     // const errors={}
     const data = { 
                 name: formValues.name,
                 email: formValues.email,
                 password:formValues.password 
                 };
-const url="http://localhost/buyenergy_api/public/api/register";
+    const url="http://localhost/buyenergy_api/public/api/register";
 
     fetch(
         url,
@@ -99,14 +101,15 @@ const url="http://localhost/buyenergy_api/public/api/register";
         if(data['success']===true){
           const  token=data['token']
           console.log(token)
-            history('/dashboard')
+            // history('/login')
             // setToken(token)
-            setSuccessMessage='User is Registered successfully! Login'
+            setShowModal(true)
         }else{
           
           const error=data['email'][0]
           console.log(error)
             setResponseError(error)
+            setLoading(false)
         }
         // console.log('Success:', data);
         })
@@ -134,15 +137,25 @@ const url="http://localhost/buyenergy_api/public/api/register";
     
 }
   return <>
-            {/* {loading===true ? */}
-             <Formhero 
-            {...homeData} 
-            handleChange={handleChange}
-            onSubmit={onSubmit}
-            formErrors={inputErrors}
-            responseError={responseError}
-          /> 
-          {/* // : <Loader />} */}
+            {loading ?
+             <Loader />
+             :
+              <div>
+                {showModal && <Modal
+                  isSuccess={true}
+                  heading='User has been register successfully'
+                setOpenModal={setShowModal}
+                onClick={()=>{history('/login')}}
+                />}
+                <Formhero 
+                {...homeData} 
+                handleChange={handleChange}
+                onSubmit={onSubmit}
+                formErrors={inputErrors}
+                responseError={responseError}
+              /> 
+              </div>
+            }
         </>;
 };
 

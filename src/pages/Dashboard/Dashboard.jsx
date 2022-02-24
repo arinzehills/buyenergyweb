@@ -9,11 +9,11 @@ import useUser from '../../useUser';
 
 function Dashboard() {
         const {user, setUser} = useUser();
-        const { token, setToken } = useToken();
+        const {  token, setToken } = useToken();
   // console.log(token)
-  if(!token) {
-      return <Login setToken={setToken} setUser={setUser}/>
-  }
+//   if(!token) {
+//       return <Login setToken={setToken} setUser={setUser}/>
+//   }
   return <>
            <Sidebar  />               
            <div className="section">

@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import Formhero from '../../components/Formhero/Formhero';
 import Loader from '../../components/Loader/Loader';
 import { login } from './data';
-
+import PropTypes from 'prop-types'
 
     
 
@@ -15,9 +15,7 @@ function Login({setToken,setUser,message}) {
     const [isSubmit,setIsSubmit]=useState(false);
     const [loading,setLoading]=useState(false);
     const history=useNavigate()
-    // Login.propTypes = {
-    //     setToken: PropTypes.func.isRequired
-    //   };
+  
 
     
         const inputValues=[
@@ -55,19 +53,21 @@ function Login({setToken,setUser,message}) {
         // setLoading(true)
         console.log(formErrors)
         if(Object.keys(formErrors).length===0 && isSubmit){
+            // setLoading(true)
             console.log(formValues)
             login()
+            
         }
     },[formErrors])
-
+    console.log(loading)
     const login=async ()=>{
         setLoading(true)
         const data = { 
                     email: formValues.email,
                     password:formValues.password 
                     };
-    // const url="http://localhost/buyenergy_api/public/api/login";
-    const url="https://buyenergy.herokuapp.com/public/api/";
+    const url="http://localhost/buyenergy_api/public/api/login";
+    // const url="https://buyenergy.herokuapp.com/public/api/";
     
         fetch(
             url,
@@ -88,24 +88,27 @@ function Login({setToken,setUser,message}) {
             console.log( data);
             // console.log( data['token']);
 
-            if(data['success']===true){
+            if(data['success']===true){                
+            
               const  token=data['token']
               const  user=data['user']
-                history('/dashboard')
+             
                 setToken(token)
                 setUser(user)
+                   history('/dashboard')
+                setLoading(false)
 
             }else{
                 const error=data['message']
                 console.log(error)
                   setResponseError(error)
+                  setLoading(false)
             }
             // console.log('Success:', data);
             })
             .catch((error) => {
             console.warn('Error:', error);
             });
-            setLoading(false);
     }
     // console.log(loading)
     const validate=(values)=>{
@@ -137,18 +140,26 @@ function Login({setToken,setUser,message}) {
         // handleChange:{handleChange}
         // onClick:click,
     }
-    console.log(message)
+    console.log(loading)
+    
   return <>
-            {loading!=true ? 
+            {loading ? 
+            <Loader />
+            
+            : 
             <Formhero {...homeData} 
                         handleChange={handleChange}
                         onSubmit={onSubmit}
                         formErrors={inputErrors}
                         message={message}
                         responseError={responseError}
-            /> : <Loader />}
+            />
+             }
             {/* <Button  buttonColor='orange' children='ddsajkasd'>dajdhs</Button> */}
         </>;
+        
 }
-
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+  }
 export default Login;

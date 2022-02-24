@@ -35,8 +35,8 @@ const App = () => {
         // getToken()
         const {user, setUser} = useUser();
         const { token, setToken } = useToken();     
-         const [successMessage,setSuccessMessage]=useState();
-         console.log(user)
+         const [successMessage,setSuccessMessage]=useState('');
+         console.log(successMessage)
   return (
             <div>
             
@@ -48,15 +48,16 @@ const App = () => {
                     <Route path='/contact' exact element={<Contactus/>}/>
                     <Route path='/faq'  exact element={<FAQ />}/>
                     <Route path='/login' 
-                     setToken={setToken}
-                     setUser={setUser}
-                     message={successMessage}
-                     exact element={<Login />}/>
+                     
+                     exact element={<Login 
+                        setToken={setToken}
+                        setUser={setUser}
+                        message={successMessage}/>}/>
                     <Route path='/forgotPassword'  exact element={<ForgotPassword />}/>
                     <Route path='/resetPassword'  exact element={<ResetPassword />}/>
                     <Route path='/register' 
-                    setSuccessMessage={setSuccessMessage}                    
-                    exact element={<Register />}/>
+                                        
+                    exact element={<Register setSuccessMessage={setSuccessMessage} />}/>
                 </Route>              
                 <Route path='/dashboard'  token={token} setToken={setToken} element={<Dashboard />}>
                     <Route path='buyenergy'   element={<Buyenergy />}/> 

@@ -4,9 +4,11 @@ import {  FaUser,  } from "react-icons/fa";
 import { GiWaterDrop } from "react-icons/gi";
 import { ImPower } from "react-icons/im";
 import { IoSettings} from "react-icons/io5";
+import { FiLogOut } from "react-icons/fi";
 import { HiViewGridAdd} from "react-icons/hi";
 import './ResponsiveSidebar.css'
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from '../../../components/Button/Button';
 
 function ResponsiveSidebar({className,onClick}) {
     const [currentLink, setCurrentLink] = useState(1);
@@ -56,7 +58,17 @@ function ResponsiveSidebar({className,onClick}) {
                         </li>
                     </ul>
             </div>
+            <div className="logout">
+                { <Link to='/'>
+                 <Button buttonColor='purple' 
+                //  onClick={()=>history('/')}
+                 >                    
+                 <FiLogOut /> Logout
+                 </Button>
+                </Link> }
+         </div>
         </div>
+        
     </>
   )
 }

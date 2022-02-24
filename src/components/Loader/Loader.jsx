@@ -1,6 +1,6 @@
 import React from 'react'
 import './Loader.css'
-function Loader() {
+function Loader({description}) {
   return (
         <>
         <div className="loader-section">
@@ -11,6 +11,7 @@ function Loader() {
                     <div></div>
                 </div>
             </div>
+            {description && <div className="loader-text"><h3>{description}</h3></div>}
         </div>
        
         </>

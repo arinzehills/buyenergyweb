@@ -44,7 +44,6 @@ useEffect(()=>{
     
     
 },[])
-console.log(loading)
 const userTransaction=async ()=>{
     const data = { 
         user_id: id, 

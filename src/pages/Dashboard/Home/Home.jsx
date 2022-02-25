@@ -49,7 +49,8 @@ const userTransaction=async ()=>{
     const data = { 
         user_id: id, 
         };
-const url="http://localhost/buyenergy_api/public/api/getUserTransactions";
+// const url="http://localhost/buyenergy_api/public/api/getUserTransactions";
+const url="https://buyenergy.herokuapp.com/public/api/getUserTransactions";
     fetch(
         url,
         {

@@ -104,6 +104,7 @@ const inputErrors=[
             // history('/login')
             // setToken(token)
             setShowModal(true)
+            setLoading(false)
         }else{
           
           const error=data['email'][0]
@@ -115,8 +116,9 @@ const inputErrors=[
         })
         .catch((error) => {
         console.warn('Error:', error);
-        });
+        
         setLoading(false);
+        });
 }
   const validate=(values)=>{
     

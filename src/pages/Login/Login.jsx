@@ -66,7 +66,8 @@ function Login({setToken,setUser,message}) {
                     email: formValues.email,
                     password:formValues.password 
                     };
-    const url="http://localhost/buyenergy_api/public/api/login";
+    // const url="http://localhost/buyenergy_api/public/api/login";
+    const url="https://buyenergy.herokuapp.com/public/api/login";
     // const url="https://buyenergy.herokuapp.com/public/api/";
     
         fetch(

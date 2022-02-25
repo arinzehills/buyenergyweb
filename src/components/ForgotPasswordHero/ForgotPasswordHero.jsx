@@ -13,6 +13,12 @@ function ForgotPasswordHero({
     formType, 
     buttonLabel,
     inputLabels,
+    inputNames,
+    inputValues,
+    handleChange,
+    onSubmit,
+    formErrors,
+    responseError,
     alt1,
     alt2,
   }) {
@@ -38,63 +44,81 @@ function ForgotPasswordHero({
                     <img src={imageleft} alt={alt2} className='right__hero-img' />
                     </div>
                    <div className="form__hero-text-wrapper">
-                           
-                    <div className="form-col">
-                            <div className="form-col">
-                            <div className='left__hero-img-wrapper'>
-                                    <img src={imageRight} alt={alt1} className='left__hero-img' />
-                                </div>
-                                
-                        <h1 className='headline' >
-                            {headline}
-                        </h1>
-                            </div>
-                        <div className="form-col btn-wrapper">
-                            <div style={{
-                                display: 'flex',
-                                flexWrap:'wrap',
-                                flexDirection:'column'}}>
-                            
-                                {inputLabels.slice(0,2).map((label)=>//pick the first 3elements
-                                  <div style={{marginTop:'10px'}}>
-                                    <InputField label={label}
-                                    inputStyle='input--shadow-purple' 
-                                    inputColor='purple-input'
-                                    /></div>
-                                )}
-                                {(formType=='contact'  || formType=='register')  && 
-                                    <div style={{marginTop:'10px'}}>
-                                    <InputField label={inputLabels[2]}
-                                    inputStyle='input--shadow-purple' 
-                                    inputColor='purple-input'
-                                    /></div>
-                                }
-                            </div>  
-                     
-                             {/* //for register and sign up */}
-                             <div style={{marginTop:'10px'}}>
-                            {/* <Link to={'/'+ buttonLabel[0]} > */}
-                             <Button  buttonColor='orange' 
-                                    onClick={()=>history('/resetPassword')}
-                                    buttonSize='btn--mobile'
-                                    style={{width:'100%'}}>
-                                    {buttonLabel[0]}  
-                            </Button >                            
-                            {/* </Link> */}
-                            <div className="hr-wrapper">
-                                    <hr className='hr'></hr>
-                                    <p className='hr-p '>OR</p>
-                                    <hr className='hr'></hr>
-                             </div>
-                            <div className="forgot-password-link">
-                                <Link to="/login"
+                   <form onSubmit={onSubmit}>
+                        <div className="form-col">
+                                <div className="form-col">
+                                <div className='left__hero-img-wrapper'>
+                                        <img src={imageRight} alt={alt1} className='left__hero-img' />
+                                    </div>
                                     
-                                >LOGIN</Link>
-                            </div>
-                            </div> 
+                            <h1 className='headline' >
+                                {headline}
+                            </h1>
+                                </div>
+                            <div className="form-col btn-wrapper">
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap:'wrap',
+                                    flexDirection:'column'}}>
+                                 <InputField label={inputLabels[0] ?? ''}
+                                        value={inputValues[0]}
+                                        name={inputNames[0]}
+                                        inputStyle='input--shadow-purple' 
+                                        inputColor='purple-input'
+                                        onHandleChange={handleChange}
+                                        />
+                                        <p className='errors'>{formErrors[0]}</p>
+                               {formType ==='reset'&&
+                               <div> <InputField 
+                                label={inputLabels[1]}
+                                value={inputValues[1]}
+                                name={inputNames[1]}
+                                inputStyle='input--shadow-purple' 
+                                inputColor='purple-input'
+                                onHandleChange={handleChange}
+                                />
+                                <p className='errors'>{formErrors[1]}</p>
+                                </div>}
+                                {formType ==='reset'&&
+                                <div style={{marginTop:'10px'}}>
+                                 <InputField label={inputLabels?.[2] ??''}
+                                        value={inputValues[2]}
+                                        name={inputNames?.[2]}
+                                        inputStyle='input--shadow-purple' 
+                                        inputColor='purple-input'
+                                        onHandleChange={handleChange}
+                                        />
+                                
+                                        <p className='errors'>{formErrors[2]}</p> 
+                                         </div>
+                                         }
+                                </div>  
+                                <p className='errors'>{responseError ?? ''}</p>
+                                {/* //for register and sign up */}
+                                <div style={{marginTop:'10px'}}>
+                                {/* <Link to={'/'+ buttonLabel[0]} > */}
+                                <Button  buttonColor='orange' 
+                                       
+                                        buttonSize='btn--mobile'
+                                        style={{width:'100%'}}>
+                                        {buttonLabel[0]}  
+                                </Button >                            
+                                {/* </Link> */}
+                                <div className="hr-wrapper">
+                                        <hr className='hr'></hr>
+                                        <p className='hr-p '>OR</p>
+                                        <hr className='hr'></hr>
+                                </div>
+                                <div className="forgot-password-link">
+                                    <Link to="/login"
+                                        
+                                    >LOGIN</Link>
+                                </div>
+                                </div> 
 
-                            </div>
-                         </div>
+                                </div>
+                            </div>                    
+                    </form>        
                         </div>
                     </div>
                 </div>

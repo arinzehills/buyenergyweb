@@ -4,7 +4,8 @@
       margin: 0;
   }
   .home__hero-section {
-    /* padding: 50px 0; */
+    padding: 10px 0;
+    padding-bottom: 50px;
   }
   .home__hero-row {
     align-items: center;
@@ -51,7 +52,9 @@
     /* margin-bottom: 35px; */
     font-size: 18px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 24px;    
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
   
   .home__hero-img-wrapper {
@@ -90,6 +93,7 @@
     .home__hero-section {
         padding-left: 0px;
         margin: 0;
+        padding-bottom: 2rem;
       }
     .home__hero-img-wrapper {
         max-width: 300px;
@@ -112,6 +116,8 @@
       }
       .home__hero-subtitle {
         max-width: 340px;
+        padding-bottom: 1em;
+        padding-top: 1em;
       }
       .container {
         /* margin: -10px; */

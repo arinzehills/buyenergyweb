@@ -57,8 +57,9 @@ function Details({next}) {
                     serviceID:serviceID,
                     type: selectMeterType,
                     };
-    const url="http://localhost/buyenergy_api/public/api/verifyCustomer";
+    // const url="http://localhost/buyenergy_api/public/api/verifyCustomer";
     // const url="https://buyenergy.herokuapp.com/public/api/";
+    const url=window.baseUrl + "verifyCustomer";
     
         fetch(
             url,

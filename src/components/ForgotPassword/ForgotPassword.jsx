@@ -60,9 +60,9 @@ const inputNames=[
                     email: formValues.email,
                     password:formValues.password 
                     };
-    const url="http://localhost/buyenergy_api/public/api/forgotPassword";
+    // const url="http://localhost/buyenergy_api/public/api/forgotPassword";
     // const url="https://buyenergy.herokuapp.com/public/api/";
-    
+    const url=window.baseUrl + "forgotPassword";
         fetch(
             url,
             {

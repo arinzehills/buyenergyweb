@@ -11,7 +11,8 @@ function ListCard({noOfTrx,id}) {
     const data = { 
       user_id: id, 
       };
-const url="http://localhost/buyenergy_api/public/api/getUserTransactions";
+    const url=window.baseUrl + "getUserTransactions";
+    //const url="http://localhost/buyenergy_api/public/api/getUserTransactions";
   fetch(
       url,
       {

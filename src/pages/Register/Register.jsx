@@ -77,8 +77,8 @@ const inputErrors=[
                 email: formValues.email,
                 password:formValues.password 
                 };
-    const url="http://localhost/buyenergy_api/public/api/register";
-
+    // const url="http://localhost/buyenergy_api/public/api/register";
+    const url=window.baseUrl + "register";
     fetch(
         url,
         {

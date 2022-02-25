@@ -71,8 +71,9 @@ function ResetPassword() {
                     password:formValues.password,
                     token:token,
                     };
-    const url="http://localhost/buyenergy_api/public/api/resetPassword";
+    // const url="http://localhost/buyenergy_api/public/api/resetPassword";
     // const url="https://buyenergy.herokuapp.com/public/api/";
+    const url=window.baseUrl + "resetPassword";
     
         fetch(
             url,

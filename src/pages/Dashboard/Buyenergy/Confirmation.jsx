@@ -30,9 +30,9 @@ function Confirmation({backStep,electData}) {
     const buyElectricity=async ()=>{
         setLoading(true)
       
-    const url="http://localhost/buyenergy_api/public/api/buyElectricity";
+    // const url="http://localhost/buyenergy_api/public/api/buyElectricity";
     // const url="https://buyenergy.herokuapp.com/public/api/";
-    
+    const url=window.baseUrl + "buyElectricity";
         fetch(
             url,
             {

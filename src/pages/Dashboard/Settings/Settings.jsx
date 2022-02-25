@@ -53,10 +53,11 @@ const update=async ()=>{
               meter_number:formValues.meter_number ,
               address:formValues.address 
               };
-const url=`http://localhost/buyenergy_api/public/api/update?token=${token}`;
-// const url="https://buyenergy.herokuapp.com/public/api/";
-  console.log(url)
-  console.log(data)
+// const url=`http://localhost/buyenergy_api/public/api/update?token=${token}`;
+    const url=window.baseUrl + `update?token=${token}`;
+    // const url="https://buyenergy.herokuapp.com/public/api/";
+  // console.log(url)
+  // console.log(data)
     fetch(
         url,
         {

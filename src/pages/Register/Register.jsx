@@ -55,7 +55,6 @@ const inputErrors=[
       e.preventDefault();
       setFormErrors(validate(formValues))
       setIsSubmit(true)
-      setLoading(true)
       console.log(formValues)
       console.log(loading)
 

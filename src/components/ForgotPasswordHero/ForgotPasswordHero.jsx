@@ -32,7 +32,7 @@ function ForgotPasswordHero({
     }
   return <>
             <div className="form-hero-section">
-                <div className="container">
+                <div className="form-hero-container">
                 <div
                     className='row form-hero-row'
                     style={{

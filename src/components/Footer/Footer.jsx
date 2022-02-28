@@ -37,8 +37,8 @@ function Footer() {
           <div className='footer-link-items'>
             <h2>About Us</h2>
             <Link to='/sign-up'>How it works</Link>
-            {/* <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
+            <Link to='/'>Testimonials</Link>
+             {/*<Link to='/'>Careers</Link>
             <Link to='/'>Investors</Link> */}
             <Link to='/'>Terms of Service</Link>
           </div>
@@ -51,20 +51,21 @@ function Footer() {
           </div>
         </div>
         <div className='footer-link-wrapper'>
-          {/* <div className='footer-link-items'>
-            <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
+          <div className='footer-link-items'>
+            <h2>More</h2>
+            <Link to='/'>Suggest to us</Link>
+            <Link to='/'>Contribute</Link>
+            {/* <Link to='/'>Ambassadors</Link>
             <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
-          </div> */}
-          {/* <div className='footer-link-items'>
+            <Link to='/'>Influencer</Link> */}
+          </div>
+           <div className='footer-link-items'>
             <h2>Social Media</h2>
             <Link to='/'>Instagram</Link>
             <Link to='/'>Facebook</Link>
             <Link to='/'>Youtube</Link>
             <Link to='/'>Twitter</Link>
-          </div> */}
+          </div> 
         </div>
       </div>
       <section className='social-media'>

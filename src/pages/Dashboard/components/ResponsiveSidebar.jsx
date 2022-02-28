@@ -59,13 +59,13 @@ function ResponsiveSidebar({className,onClick}) {
                     </ul>
             </div>
             <div className="logout">
-                { <Link to='/'>
+                <Link to='/'>
                  <Button buttonColor='purple' 
                 //  onClick={()=>history('/')}
                  >                    
                  <FiLogOut /> Logout
                  </Button>
-                </Link> }
+                </Link> 
          </div>
         </div>
         

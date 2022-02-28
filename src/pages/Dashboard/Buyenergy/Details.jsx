@@ -134,7 +134,7 @@ function Details({next}) {
             selected={selected}
             setSelected={setSelected}
             options={selectBiller}
-            inputSize={window.innerWidth < 960 ? 'ipn--medium' : 'ipn--wide' }
+            inputSize={window.innerWidth < 960 ? 'ipn--small' : 'ipn--wide' }
             inputColor='purple-input'
             />
             <p className='errors'>{formErrors.selectBiller}</p>
@@ -143,7 +143,7 @@ function Details({next}) {
                 selected={selectMeterType}
                 setSelected={setSelectMeterType}
                 options={meterType}
-                inputSize='ipn-medium'
+                inputSize='ipn-wide'
                 // isActive={isActive}
                 // setIsActive={setIsActive}
                 inputColor='purple-input'

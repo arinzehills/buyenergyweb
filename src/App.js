@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {  Routes as Switch, Route,useLocation } from "react-router-dom";
 import Homepage from './pages/Homepage/Homepage';
 import About from './pages/About/About';
@@ -19,6 +19,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import useToken from './useToken';
 import useUser from './useUser';
+import Loader from './components/Loader/Loader'
     // function setToken(userToken) {
     //     sessionStorage.setItem('token', JSON.stringify(userToken));
     // }
@@ -36,42 +37,48 @@ const App = () => {
         const {user, setUser} = useUser();
         const { token, setToken } = useToken();     
          const [successMessage,setSuccessMessage]=useState('');
-         console.log(successMessage)
+         const [loading, setLoading]=useState(false);
+    useEffect(()=>{
+        setLoading(true)
+        setTimeout(()=>{
+            setLoading(false)
+        },3000)
+    },[])
   return (
-            <div>
-            
-            {/* {location.pathname!='/dashboard'   && <Navbar /> }                           */}
-            <Switch>
-                <Route path='/' exact element={<HomepageWrapper/>}>
-                    <Route  index element={<Homepage/>}/>
-                    <Route path='/about' exact element={<About/>}/>
-                    <Route path='/contact' exact element={<Contactus/>}/>
-                    <Route path='/faq'  exact element={<FAQ />}/>
-                    <Route path='/login' 
-                     
-                     exact element={<Login 
-                        setToken={setToken}
-                        setUser={setUser}
-                        message={successMessage}/>}/>
-                    <Route path='/forgotPassword'  exact element={<ForgotPassword />}/>
-                    <Route path='/resetPassword'  exact element={<ResetPassword />}/>
-                    <Route path='/register' 
-                                        
-                    exact element={<Register setSuccessMessage={setSuccessMessage} />}/>
-                </Route>              
-                <Route path='/dashboard'  token={token} setToken={setToken} element={<Dashboard />}>
-                    <Route path='buyenergy'   element={<Buyenergy />}/> 
-                    <Route path='buyairtime'   element={<Buyairtime />}/> 
-                    <Route path='buywater'   element={<Buywater />}/> 
-                    <Route path='settings'   element={<Settings />}/>                     
-                    <Route path='profile'   element={<Profile />}/>                     
-                    <Route index element={<Home />} />  
-                </Route>
-                {/* <Redirect to='/dashboard' /> */}
-                <Route path='*'  exact element={<Notfound />}/>
-            </Switch>
+         <div>                      
+                {loading ? 
+                <Loader />:
+                <Switch>
+                            <Route path='/' exact element={<HomepageWrapper/>}>
+                            <Route  index element={<Homepage/>}/>
+                            <Route path='/about' exact element={<About/>}/>
+                            <Route path='/contact' exact element={<Contactus/>}/>
+                            <Route path='/faq'  exact element={<FAQ />}/>
+                            <Route path='/login' 
+                            
+                            exact element={<Login 
+                                setToken={setToken}
+                                setUser={setUser}
+                                message={successMessage}/>}/>
+                            <Route path='/forgotPassword'  exact element={<ForgotPassword />}/>
+                            <Route path='/resetPassword'  exact element={<ResetPassword />}/>
+                            <Route path='/register' 
+                                                
+                            exact element={<Register setSuccessMessage={setSuccessMessage} />}/>
+                        </Route>              
+                        <Route path='/dashboard'  token={token} setToken={setToken} element={<Dashboard />}>
+                            <Route path='buyenergy'   element={<Buyenergy />}/> 
+                            <Route path='buyairtime'   element={<Buyairtime />}/> 
+                            <Route path='buywater'   element={<Buywater />}/> 
+                            <Route path='settings'   element={<Settings />}/>                     
+                            <Route path='profile'   element={<Profile />}/>                     
+                            <Route index element={<Home />} />  
+                        </Route>
+                        {/* <Redirect to='/dashboard' /> */}
+                        <Route path='*'  exact element={<Notfound />}/>
+                    </Switch>}
                {/* {location.pathname!='/dashboard' && location.pathname!='/dashbaord/*' &&  <Footer /> } */}
-            </div>  
+          </div>  
            
          );
 };
@@ -86,4 +93,7 @@ const App = () => {
 // {showNavbar && <Navbar />}
 // </>)
 // GoodLuck
+
+            
+        //    {location.pathname!='/dashboard'   && <Navbar /> }  
 export default App;

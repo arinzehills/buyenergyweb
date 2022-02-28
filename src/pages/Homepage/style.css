@@ -1,0 +1,12 @@
+.home-page-svg{
+    /* max-height:400px; */
+    position: fixed;
+    z-index: -100;
+    /* top: -10rem; */
+    right: -5rem;
+    top: -100px;
+}
+.home-page-svg img{
+    height: 100vh;
+    
+}

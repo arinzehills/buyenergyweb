@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import './Inputfield.css'
 import './Dropdownfield.css'
-import { FaMobile, FaUser,FaAlignRight,FaTimes   } from "react-icons/fa";
+import { FaMobile,  } from "react-icons/fa";
+import { AiOutlineDown,  } from "react-icons/ai";
 
 function DropDownField({
     inputStyle,inputColor,inputSize,style,
@@ -37,7 +38,7 @@ function DropDownField({
                     onClick={(e)=>setIsActive(!isActive)}
                 >
                     {selected}
-                    <span><FaMobile /></span>
+                    <span><AiOutlineDown /></span>
                 </div>
                 {isActive && <div className="dropdown-content">
                     {options.map((option)=>

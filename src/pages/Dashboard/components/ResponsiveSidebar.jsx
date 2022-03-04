@@ -41,16 +41,49 @@ function ResponsiveSidebar({className,onClick}) {
                         <li onClick={()=>setCurrentLink(4)} className={currentLink===4 ? 'active-nav': ''}>
                         <Link to="/dashboard/buyairtime" onClick={onClick}>
                             <HiViewGridAdd />
-                            <span> More</span>   
+                            <span> Home Energy plans</span>   
                             </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(5)} className={currentLink===5 ? 'active-nav': ''}>
+                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                            <HiViewGridAdd />
+                            <span> Smart Meter</span>   
+                            </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(6)} className={currentLink===6 ? 'active-nav': ''}>
+                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                            <HiViewGridAdd />
+                            <span> Our Green Energy 
+                                <p style={{fontSize:'10px'}}>(Wind, Solar, Hydro, 
+                              Tiddal, Biomasss and Geothermal Energy)</p>
+                              </span>   
+                            </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(7)} className={currentLink===7 ? 'active-nav': ''}>
+                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                            <HiViewGridAdd />
+                            <span> Compare Plans</span>   
+                            </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(8)} className={currentLink===8 ? 'active-nav': ''}>
+                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                            <HiViewGridAdd />
+                            <span> Buy Energy Beyond</span>   
+                            </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(9)} className={currentLink===9 ? 'active-nav': ''}>
+                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                            <HiViewGridAdd />
+                            <span> More</span>   
+                            </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(10)} className={currentLink===10 ? 'active-nav': ''}>
                         <Link to="/dashboard/profile" onClick={onClick}>
                             <FaUser />
                             <span> Profile</span>   
                          </Link>
                         </li>
-                        <li onClick={()=>setCurrentLink(6)} className={currentLink===6 ? 'active-nav': ''}>
+                        <li onClick={()=>setCurrentLink(11)} className={currentLink===11 ? 'active-nav': ''}>
                         <Link to="/dashboard/settings" onClick={onClick}>
                             <IoSettings />
                             <span> Settings</span>   

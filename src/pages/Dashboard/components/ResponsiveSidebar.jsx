@@ -39,19 +39,19 @@ function ResponsiveSidebar({className,onClick}) {
                           </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(4)} className={currentLink===4 ? 'active-nav': ''}>
-                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                        <Link to="/dashboard/buywater" onClick={onClick}>
                             <HiViewGridAdd />
                             <span> Home Energy plans</span>   
                             </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(5)} className={currentLink===5 ? 'active-nav': ''}>
-                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                        <Link to="/dashboard/buywater" onClick={onClick}>
                             <HiViewGridAdd />
                             <span> Smart Meter</span>   
                             </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(6)} className={currentLink===6 ? 'active-nav': ''}>
-                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                        <Link to="/dashboard/buywater" onClick={onClick}>
                             <HiViewGridAdd />
                             <span> Our Green Energy 
                                 <p style={{fontSize:'10px'}}>(Wind, Solar, Hydro, 
@@ -60,13 +60,13 @@ function ResponsiveSidebar({className,onClick}) {
                             </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(7)} className={currentLink===7 ? 'active-nav': ''}>
-                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                        <Link to="/dashboard/buywater" onClick={onClick}>
                             <HiViewGridAdd />
                             <span> Compare Plans</span>   
                             </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(8)} className={currentLink===8 ? 'active-nav': ''}>
-                        <Link to="/dashboard/buyairtime" onClick={onClick}>
+                        <Link to="/dashboard/buywater" onClick={onClick}>
                             <HiViewGridAdd />
                             <span> Buy Energy Beyond</span>   
                             </Link> 

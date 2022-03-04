@@ -17,6 +17,9 @@
   --dark-blue:#02b5ff;
 
 }
+*{
+
+}
 .navbar {
     background: #ffffff;
     height: 80px;
@@ -27,6 +30,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    padding-bottom: 1rem;
   }
   
   .navbar-container {

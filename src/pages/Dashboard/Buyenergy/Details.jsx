@@ -134,7 +134,7 @@ function Details({next}) {
             selected={selected}
             setSelected={setSelected}
             options={selectBiller}
-            inputSize={window.innerWidth < 960 ? 'ipn--small' : 'ipn--wide' }
+            inputSize={window.innerWidth < 960 ? 'ipn-wide' : 'ipn--wide' }
             inputColor='purple-input'
             />
             <p className='errors'>{formErrors.selectBiller}</p>

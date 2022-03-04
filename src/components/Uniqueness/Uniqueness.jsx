@@ -6,14 +6,14 @@ const heading=['Buy Energy Units','Ofline Purchase','Fast and secure'];
 const desc=[
     'With buy energy you can purchase prepaid meter tokens at just a click'+
     ' and get your tokens immediately, you can also pay for post paid meters '+
-    'in an easier,better, and more smarter smarter way from the comfort of your home',
+    'in an easier,better, and more smarter way from the comfort of your home',
 
-    "Don't have interner connection? Don't worry Buy Energy made it possible to purchase tokens "+
-    ' for your meters by using ussd code'+
+    "Don't have internet connection? Don't worry Buy Energy made it possible to purchase tokens "+
+    ' for your meters by using ussd code '+
     'from the anywhere',
 
     'With Buy energy fast and more secure way has been provided to buy tokens'+
-     "You can trust us for fast and safe transactions"
+     " you can trust us for fast and safe transactions"
     
 ]
 function Uniqueness() {

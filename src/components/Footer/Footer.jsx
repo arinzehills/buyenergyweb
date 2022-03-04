@@ -46,8 +46,8 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
-            {/* <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link> */}
+            <Link to='/'>Forums</Link>
+            <Link to='/'>Complaints</Link> 
           </div>
         </div>
         <div className='footer-link-wrapper'>
@@ -78,7 +78,7 @@ function Footer() {
                       alt="" />
             </Link>
           </div>
-          <small className='website-rights'>Buy energy © 2022</small>
+          <small className='website-rights'>Buy Energy Units Ltd © 2022</small>
           <div className='social-icons'>
             <Link
               className='social-icon-link'

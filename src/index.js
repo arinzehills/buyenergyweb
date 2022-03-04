@@ -6,6 +6,7 @@ import App from './App';
 
 window.baseUrl="https://buyenergy.herokuapp.com/public/api/"
 // window.baseUrl="http://localhost/buyenergy_api/public/api/"
+// window.baseUrl="http://192.168.43.193:8000/public/api"
 
 ReactDOM.render(
   <React.StrictMode>

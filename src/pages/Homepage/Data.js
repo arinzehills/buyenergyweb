@@ -19,7 +19,7 @@ export const homeData2={
     showButton: false,
     // buttonLabel:['Sign up','Buy units'],
     img:'images/cardslant.png',
-    imgStart:'stat',
+    imgStart:'start',
     alt1:'',
     alt2:'',
 }
@@ -31,11 +31,23 @@ export const homeData3={
     showButton: false,
     // buttonLabel:['Sign up','Buy units'],
     img:'images/evcharging.png',
-    imgStart:'start',
+    imgStart:'',
     alt1:'',
     alt2:'',
 }
 export const homeData4={
+    headline:'Smart Home charging',
+    description: 'Our unique tariff for EV Charging, power your homes'+
+                ' with 100% green electricity and packed with next '+
+                'generation smart EV Charger with innovative features and supper-intuitive technology',
+    showButton: false,
+    // buttonLabel:['Sign up','Buy units'],
+    img:'images/evcharging.png',
+    imgStart:'start',
+    alt1:'',
+    alt2:'',
+}
+export const homeData5={
     headline:'Get our mobile app today',
     description: 'Our mobile app makes it easier for you to buy units without'+
                    ' having the think of our website url and downloading our apps gives '+

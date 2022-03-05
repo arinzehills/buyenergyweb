@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
 import Uniqueness from '../../components/Uniqueness/Uniqueness';
-import { homeData,homeData2,homeData3,homeData4 } from './Data';
+import { homeData,homeData2,homeData3,homeData4,homeData5 } from './Data';
 import './style.css'
 
 const Homepage = () => {
@@ -17,6 +17,7 @@ const Homepage = () => {
                     <Hero {...homeData2}/>
                     <Hero {...homeData3}/>
                     <Hero {...homeData4}/>
+                    <Hero {...homeData5}/>
                   </div>
                   </>;
 };

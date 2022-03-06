@@ -37,12 +37,12 @@ export const homeData3={
 }
 export const homeData4={
     headline:'Smart Home charging',
-    description: 'Our unique tariff for EV Charging, power your homes'+
-                ' with 100% green electricity and packed with next '+
-                'generation smart EV Charger with innovative features and supper-intuitive technology',
+    description: 'Get your home of the future now, thanks to clever tech that makes it greener. '+
+                '  Discover the latest smart Energy tech to run your home sustainably. '+
+                '',
     showButton: false,
     // buttonLabel:['Sign up','Buy units'],
-    img:'images/evcharging.png',
+    img:'images/homecharging2.jpeg',
     imgStart:'start',
     alt1:'',
     alt2:'',

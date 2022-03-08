@@ -9,9 +9,9 @@ const Homepage = () => {
             return <>
                   <div>
                     
-                    {/* <div className='home-page-svg'>
-                      <img src="images/image2vector.svg" alt="heill" />
-                    </div> */}
+                    <div className='home-page-svg'>
+                      <img src="images/purplewave.svg" alt="hill" />
+                    </div>
                     <Hero {...homeData}/>
                     <Uniqueness />
                     <Hero {...homeData2}/>

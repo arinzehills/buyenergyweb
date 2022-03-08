@@ -88,22 +88,55 @@ export default function Sidebar() {
                         <li onClick={()=>setCurrentLink(3)} className={currentLink===3 ? 'active-nav': ''}>
                            <Link to="/dashboard/buywater">
                             <GiWaterDrop />
-                            <span> Buy water units</span>   
+                            <span> Home Energy plans</span>   
                           </Link> 
                         </li>
                         <li onClick={()=>setCurrentLink(4)} className={currentLink===4 ? 'active-nav': ''}>
+                           <Link to="/dashboard/buywater">
+                            <GiWaterDrop />
+                            <span>  Smart Meter</span>   
+                          </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(5)} className={currentLink===5 ? 'active-nav': ''}>
+                           <Link to="/dashboard/buywater">
+                            <GiWaterDrop />
+                            <span> Our Green Energy 
+                                <p style={{fontSize:'10px'}}>(Wind, Solar, Hydro, 
+                              Tiddal,<br></br> Biomasss and Geothermal Energy)</p>
+                              </span>   
+                          </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(6)} className={currentLink===6 ? 'active-nav': ''}>
+                           <Link to="/dashboard/buywater">
+                            <GiWaterDrop />
+                            <span> Buy water units</span>   
+                          </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(7)} className={currentLink===7 ? 'active-nav': ''}>
+                           <Link to="/dashboard/buywater">
+                            <GiWaterDrop />
+                            <span> Compare Plans</span>   
+                          </Link> 
+                        </li>
+                        <li onClick={()=>setCurrentLink(8)} className={currentLink===8 ? 'active-nav': ''}>
+                           <Link to="/dashboard/buywater">
+                            <GiWaterDrop />
+                            <span> Buy Energy Beyond</span>   
+                          </Link> 
+                        </li> 
+                        <li onClick={()=>setCurrentLink(9)} className={currentLink===9 ? 'active-nav': ''}>
                         <Link to="/dashboard/buyairtime">
                             <HiViewGridAdd />
                             <span> More</span>   
                             </Link> 
                         </li>
-                        <li onClick={()=>setCurrentLink(5)} className={currentLink===5 ? 'active-nav': ''}>
+                        <li onClick={()=>setCurrentLink(10)} className={currentLink===10 ? 'active-nav': ''}>
                         <Link to="/dashboard/profile">
                             <FaUser />
                             <span> Profile</span>   
                          </Link>
                         </li>
-                        <li onClick={()=>setCurrentLink(6)} className={currentLink===6 ? 'active-nav': ''}>
+                        <li onClick={()=>setCurrentLink(11)} className={currentLink===10 ? 'active-nav': ''}>
                         <Link to="/dashboard/settings">
                             <IoSettings />
                             <span> Settings</span>   
